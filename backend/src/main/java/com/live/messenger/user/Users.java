@@ -1,8 +1,8 @@
-package com.live.messenger.model;
-import javax.persistence.*;
+package com.live.messenger.user;
+import jakarta.persistence.*;
 @Entity
 @Table(name = "users")
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -10,6 +10,7 @@ public class User {
 
     @Column(columnDefinition = "Varchar(50)", nullable = false)
     private String username;
+
 
     @Column(columnDefinition = "Varchar(70)", nullable = false)
     private String password;
@@ -25,9 +26,6 @@ public class User {
 
     @Column(columnDefinition = "Varchar(1000)", nullable = false)
     private String profilePicture;
-
-    @Column(columnDefinition = "tinyint", nullable = false)
-    private boolean isAdmin;
 
     public int getId() {
         return id;
@@ -85,17 +83,9 @@ public class User {
         this.profilePicture = profilePicture;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
-    }
-
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
-    }
-
     @Override
     public String toString() {
-        return "User{" +
+        return "Users{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
@@ -103,7 +93,6 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", profilePicture='" + profilePicture + '\'' +
-                ", isAdmin=" + isAdmin +
                 '}';
     }
 }

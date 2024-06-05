@@ -21,8 +21,6 @@ public class UserDto {
 
     private String profilePicture;
 
-    private boolean admin;
-
     public String getUsername() {
         return username;
     }
@@ -71,14 +69,6 @@ public class UserDto {
         this.profilePicture = profilePicture;
     }
 
-    public boolean isAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
-    }
-
     @Override
     public String toString() {
         return "UserDto{" +
@@ -88,7 +78,6 @@ public class UserDto {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", profilePicture='" + profilePicture + '\'' +
-                ", admin=" + admin +
                 '}';
     }
 }

@@ -27,7 +27,6 @@ public class UsersService {
         userDto.setFirstName(user.getFirstName());
         userDto.setLastName(user.getLastName());
         userDto.setProfilePicture(user.getProfilePicture());
-        userDto.setAdmin(user.isAdmin());
         return userDto;
     }
 
@@ -57,7 +56,6 @@ public class UsersService {
         existingUser.setFirstName(userDto.getFirstName());
         existingUser.setLastName(userDto.getLastName());
         existingUser.setProfilePicture(userDto.getProfilePicture());
-        existingUser.setAdmin(userDto.isAdmin());
         return usersRepository.save(existingUser);
     }
 }
