@@ -78,7 +78,7 @@ public class MessagesService {
                 .collect(Collectors.toList());
     }
 
-    private MessageDto convertToDto(Messages message) {
+    public MessageDto convertToDto(Messages message) {
         // Convert Messages to MessageDto
         MessageDto messageDto = new MessageDto();
         messageDto.setSenderId(message.getSender().getId());
