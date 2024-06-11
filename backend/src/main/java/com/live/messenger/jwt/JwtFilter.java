@@ -39,24 +39,29 @@ public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         return request.getRequestURI().equals("/users") ||
-                request.getRequestURI().equals("/auth/login");
+                request.getRequestURI().equals("/auth/login") ||
+                request.getRequestURI().equals("/ws");
+
     }
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         // Extract the JWT from the Authorization header.
         String authorization = request.getHeader("Authorization");
-        String jwt = authorization.substring("Bearer ".length());
+        if (authorization != null && authorization.startsWith("Bearer ")) {
+            String jwt = authorization.substring("Bearer ".length());
 
-        // Retrieve the username from the JWT.
-        String userName = jwtService.getUserName(jwt);
-        Optional<Users> users = usersRepository.findByUsername(userName);
-        List<GrantedAuthority> authorities = List.of(()->"user");
-        // Create an authentication token and set it in the security context.
-        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userName, null,authorities );
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+            // Retrieve the username from the JWT.
+            String userName = jwtService.getUserName(jwt);
+            Optional<Users> users = usersRepository.findByUsername(userName);
+            List<GrantedAuthority> authorities = List.of(() -> "user");
+            // Create an authentication token and set it in the security context.
+            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userName, null, authorities);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        // Continue the filter chain for authenticated users.
-        filterChain.doFilter(request, response);
+            // Continue the filter chain for authenticated users.
+            filterChain.doFilter(request, response);
+        }
     }
 }
