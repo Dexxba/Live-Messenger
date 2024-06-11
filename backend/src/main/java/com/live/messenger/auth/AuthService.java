@@ -33,6 +33,6 @@ public class AuthService {
         }
 
         // If the username and password are valid, create and return a JWT for the user
-        return jwtService.createJwt(user.getUsername());
+        return jwtService.createJwt(user.getUsername(),user.getId());
     }
 }

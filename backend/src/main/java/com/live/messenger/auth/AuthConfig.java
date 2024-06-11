@@ -22,7 +22,8 @@ public class AuthConfig {
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> {
                     authorizationManagerRequestMatcherRegistry
                             .requestMatchers(HttpMethod.POST, "/users").permitAll()
-                            .requestMatchers(HttpMethod.POST, "/auth/login").permitAll();
+                            .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
+                            .requestMatchers("/ws").permitAll(); // Allow WebSocket connections
                     // All other requests require authentication
                     authorizationManagerRequestMatcherRegistry.anyRequest().authenticated();
                 })
