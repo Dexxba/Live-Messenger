@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to custom CSS styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Edit Page</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form id="loginForm">
+                <h1>Let's update your information</h1>
+                <span>Personalize yourself</span>
+                <!-- Input field for updating password -->
+                <input type="password" id="updatePassword" placeholder="Password" />
+                <!-- Input field for updating email -->
+                <input type="email" id="updateEmail" placeholder="Email" />
+                <!-- Container for first name and last name input fields -->
+                <div class="name-container">
+                    <!-- Input field for updating first name -->
+                    <input type="text" id="updateFirstName" placeholder="First Name" />
+                    <!-- Input field for updating last name -->
+                    <input type="text" id="updateLastName" placeholder="Last Name" />
+                </div>
+                <!-- Button to submit the form and update information -->
+                <button type="submit">Update</button>
+                <!-- Button to go back to the previous page -->
+                <button type="button" class="ghost" id="backButton">Back</button>
+            </form>
+        </div>
+    </div>
+    <!-- Link to custom JavaScript file for handling profile updates -->
+    <script src="js/edit-profile-app.js"></script>
+</body>
+</html>
