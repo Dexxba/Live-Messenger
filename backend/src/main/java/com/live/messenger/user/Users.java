@@ -24,7 +24,7 @@ public class Users {
     @Column(columnDefinition = "Varchar(50)", nullable = false)
     private String lastName;
 
-    @Column(columnDefinition = "Varchar(1000)", nullable = false)
+    @Column(columnDefinition = "Varchar(1000)", nullable = true)
     private String profilePicture;
 
     public int getId() {
