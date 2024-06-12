@@ -48,7 +48,9 @@ public class UsersService {
     }
 
     public Users saveUser(UserDto userDto, Users existingUser) {
-        existingUser.setUsername(userDto.getUsername());
+        if (userDto.getUsername() !=null) {
+            existingUser.setUsername(userDto.getUsername());
+        }
         if (userDto.getPassword() != null) {
             existingUser.setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
         }
@@ -59,4 +61,5 @@ public class UsersService {
         return usersRepository.save(existingUser);
     }
 }
+
 
