@@ -23,16 +23,13 @@ public class AuthService {
 
 
     public String getJwt(LoginDto loginDto) {
-        // Attempt to find a user by their username, or throw an exception with status NOT_FOUND
-        Users user = usersRepository.findByUsername(loginDto.getUsername()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Users user = usersRepository.findByUsername(loginDto.getUsername())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
 
-        // Check if the provided password matches the hashed password stored in the database
         if (!bCryptPasswordEncoder.matches(loginDto.getPassword(), user.getPassword())) {
-            // If the password doesn't match, throw an exception with status UNAUTHORIZED
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid password");
         }
 
-        // If the username and password are valid, create and return a JWT for the user
-        return jwtService.createJwt(user.getUsername(),user.getId());
+        return jwtService.createJwt(user.getUsername(), user.getId());
     }
 }
