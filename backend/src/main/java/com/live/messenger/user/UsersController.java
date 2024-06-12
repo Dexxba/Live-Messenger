@@ -21,6 +21,7 @@ public class UsersController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/{id}")
     public ResponseEntity<String> updateUser(@PathVariable int id, @RequestBody UserDto userDto) {
         Users updateUser = usersService.updateUser(id, userDto);
