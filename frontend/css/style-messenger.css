@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); /* Import Google Font Montserrat */
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Set default font to Roboto */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #68375b, #697499); /* Background gradient */
+}
+
+.container {
+    display: flex;
+    height: 90vh;
+    width: 90vw;
+    max-width: 1200px;
+    background: #360b72; /* Container background color */
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); /* Box shadow */
+    overflow: hidden;
+    backdrop-filter: blur(10px); /* Blur effect */
+}
+
+.sidebar {
+    width: 25%;
+    background: rgba(104, 55, 91, 0.9); /* Sidebar background color */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Border at the bottom of each list item */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li i {
+    margin-right: 10px; /* Margin for icons */
+}
+
+.sidebar ul li:hover {
+    background: rgba(121, 83, 125, 0.8); /* Background color on hover */
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar button {
+    background: rgba(121, 83, 125, 0.9); /* Button background color */
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.sidebar button:hover {
+    background: rgba(91, 45, 77, 0.9); /* Button background color on hover */
+}
+
+.chat-container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(10px); /* Blur effect */
+}
+
+.chat-header {
+    padding: 20px;
+    background: rgba(105, 116, 153, 0.9); /* Chat header background color */
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Border at the bottom of the chat header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header .active-users {
+    display: flex;
+    align-items: center;
+}
+
+.chat-header .active-users .active-user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Circular active user icon */
+    margin-left: 10px;
+    border: 2px solid white;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    background: rgba(249, 249, 249, 0.8); /* Chat messages background color */
+}
+
+.chat-messages .message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(211, 211, 211, 0.8); /* Default message background color */
+    max-width: 60%;
+}
+
+.chat-messages .message.sent {
+    background: rgba(209, 196, 233, 0.8); /* Sent message background color */
+    margin-left: auto; /* Align sent messages to the right */
+}
+
+.chat-messages .message.received {
+    background: rgba(255, 204, 188, 0.8); /* Received message background color */
+}
+
+#chat-form {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Border at the top of the chat form */
+    background: rgba(255, 255, 255, 0.8); /* Chat form background color */
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.8); /* Input field border color */
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#chat-form button {
+    background: rgba(105, 116, 153, 0.9); /* Button background color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#chat-form button:hover {
+    background: rgba(75, 88, 126, 0.9); /* Button background color on hover */
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: grey;
+    margin-top: 4px;
+}
