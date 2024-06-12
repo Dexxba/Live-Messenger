@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to custom CSS for messenger -->
+    <link rel="stylesheet" href="css/style-messenger.css">
+    <title>Live Messenger</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar for chat rooms and profile actions -->
+        <div class="sidebar">
+            <h2>Chat Rooms</h2>
+            <ul id="room-list">
+                <li class="room"><i class="fas fa-users"></i> General</li>
+            </ul>
+            <div class="buttons-container">
+                <!-- Button to edit profile -->
+                <button id="edit-profile"><i class="fas fa-user-edit"></i> Edit profile</button>
+                <!-- Button to logout -->
+                <button id="logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+        <!-- Chat container for messages and input -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3 id="room-name">General</h3>
+            </div>
+            <!-- Container for chat messages -->
+            <div class="chat-messages" id="chat-messages"></div>
+            <!-- Form for sending messages -->
+            <form id="chat-form">
+                <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+                <button type="submit" id="send"><i class="fa fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+    <!-- External libraries for WebSocket and STOMP protocol -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <!-- Custom JavaScript for messenger application -->
+    <script src="js/Messanger-app.js"></script>
+</body>
+</html>
