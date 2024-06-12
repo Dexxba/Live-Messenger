@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); /* Import Google Font Montserrat */
+
+/* Reset some default styles and set default font to Roboto */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #68375b, #697499); /* Background gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: -20px 0 50px;
+}
+
+.container {
+    background: #fff; /* Container background color */
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); /* Box shadow */
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 520px;
+    transition: transform 0.6s ease-in-out; /* Transition effect for container */
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.6s ease-in-out; /* Transition effect for form container */
+}
+
+.sign-in-container {
+    left: 0;
+    z-index: 2;
+    opacity: 1;
+    background: #cdc4da; /* Sign-in container background color */
+}
+
+.sign-up-container {
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(100%);
+    background: #cdc4da; /* Sign-up container background color */
+}
+
+/* Sign-up mode transformations */
+.container.sign-up-mode .sign-up-container {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 5;
+}
+
+.container.sign-up-mode .sign-in-container {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+form {
+    background: #cdc4da; /* Form background color */
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+span {
+    font-weight: 500;
+    font-size: 22px;
+    color: #1b1230; /* Text color */
+    margin: 20px 0;
+}
+
+input {
+    background: #eee; /* Input field background color */
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.name-container {
+    display: flex;
+    gap: 10px; /* Space between first name and last name inputs */
+    width: 100%;
+}
+
+.name-container input {
+    width: 100%;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #697499;
+    background: #697499; /* Button background color */
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in; /* Transition effect for button */
+    margin-top: 10px;
+}
+
+button.ghost {
+    background-color: transparent;
+    border: 2px solid #697499;
+    color: #697499;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    transition: background-color 0.3s, color 0.3s, transform 80ms ease-in; /* Transition effects for ghost button */
+}
+
+button.ghost:hover {
+    background-color: #703360; /* Background color on hover */
+    color: #ffffff;
+}
+
+button:active {
+    transform: scale(0.95); /* Scale down button on active */
+}
+
+button:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+.social-icons {
+    margin: 5px 0;
+}
+
+.social-icons a {
+    border: 1px solid #703360; /* Border color for social icons */
+    border-radius: 50%; /* Circular icons */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+}
