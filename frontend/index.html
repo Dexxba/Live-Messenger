@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to custom CSS styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- Sign In form container -->
+        <div class="form-container sign-in-container">
+            <form id="loginForm">
+                <h1>Sign In</h1>
+                <!-- Social media icons for sign-in options -->
+                <div class="social-icons">
+                    <a href="https://mail.google.com" target="_blank"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <span>Welcome back Friend!</span>
+                <!-- Input fields for username and password -->
+                <input type="text" id="username" placeholder="Username" />
+                <input type="password" id="password" placeholder="Password" />
+                <!-- Submit button for sign-in -->
+                <button type="submit">Sign In</button>
+                <!-- Button to switch to sign-up form -->
+                <button type="button" class="ghost" id="showSignUp">Sign Up</button>
+            </form>
+        </div>
+        <!-- Sign Up form container -->
+        <div class="form-container sign-up-container">
+            <form id="registerForm">
+                <h1>Create Account</h1>
+                <!-- Social media icons for sign-up options -->
+                <div class="social-icons">
+                    <a href="https://mail.google.com" target="_blank"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <span>Hello, Friend let's join you in!</span>
+                <!-- Input fields for registration details -->
+                <input type="text" id="registerUsername" placeholder="Username" />
+                <input type="password" id="registerPassword" placeholder="Password" />
+                <input type="email" id="registerEmail" placeholder="Email" />
+                <!-- Input fields for first name and last name -->
+                <div class="name-container">
+                    <input type="text" id="registerFirstName" placeholder="First Name" />
+                    <input type="text" id="registerLastName" placeholder="Last Name" />
+                </div>
+                <!-- Submit button for sign-up -->
+                <button type="submit">Sign Up</button>
+                <!-- Button to switch to sign-in form -->
+                <button type="button" class="ghost" id="showSignIn">Sign In</button>
+            </form>
+        </div>
+    </div>
+    <!-- Link to custom JavaScript file -->
+    <script src="js/Sing-in-app.js"></script>
+</body>
+</html>
